@@ -25,7 +25,7 @@ func run(args []string) error {
 	}
 
 	for id, m := range metrics {
-		fmt.Printf("id: %s, temperature: %f, humidity: %f, illumination: %f\n", id, m.Temperature, m.Humidity, m.Illumination)
+		fmt.Printf("id: %s, temperature: %f, humidity: %f, illumination: %f, createdAt: %s\n", id, m.Temperature, m.Humidity, m.Illumination, m.CreatedAt.Local().String())
 	}
 
 	return nil

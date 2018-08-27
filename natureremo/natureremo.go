@@ -35,6 +35,8 @@ func (c *Client) GetRoomMetrics(ctx context.Context) (map[string]*types.RoomMetr
 			Temperature:  d.NewestEvents[natureremo.SensorTypeTemperature].Value,
 			Humidity:     d.NewestEvents[natureremo.SensorTypeHumidity].Value,
 			Illumination: d.NewestEvents[natureremo.SensortypeIllumination].Value,
+			// Nature Remo mini cannot monitor humidity and illumination
+			CreatedAt: d.NewestEvents[natureremo.SensorTypeTemperature].CreatedAt,
 		}
 	}
 
